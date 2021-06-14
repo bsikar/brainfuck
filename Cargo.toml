@@ -1,0 +1,12 @@
+[package]
+name = "brainfuck"
+version = "0.1.0"
+authors = ["Brighton Sikarskie <brighton.sikarskie@tuta.io>"]
+edition = "2018"
+readme = "README.md"
+description = "A simple rust brainfuck interpreter"
+repository = "https://github.com/bsikar/brainfuck"
+license = "MIT"
+
+[dependencies]
+clap = "2.33.3"
