@@ -67,16 +67,16 @@ impl Tape {
     }
     fn increment(&mut self) {
         match self.position {
-            Position::Left(n) => self.left[n] += 1,
-            Position::Zero => self.origin += 1,
-            Position::Right(n) => self.right[n] += 1,
+            Position::Left(n) => self.left[n] = self.left[n].wrapping_add(1),
+            Position::Zero => self.origin = self.origin.wrapping_add(1),
+            Position::Right(n) => self.right[n] = self.right[n].wrapping_add(1),
         }
     }
     fn decrement(&mut self) {
         match self.position {
-            Position::Left(n) => self.left[n] -= 1,
-            Position::Zero => self.origin -= 1,
-            Position::Right(n) => self.right[n] -= 1,
+            Position::Left(n) => self.left[n] = self.left[n].wrapping_sub(1),
+            Position::Zero => self.origin = self.origin.wrapping_sub(1),
+            Position::Right(n) => self.right[n] = self.right[n].wrapping_sub(1),
         }
     }
     fn get(&self) -> u8 {
